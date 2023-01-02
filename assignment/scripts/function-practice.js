@@ -124,6 +124,25 @@ console.log(sumAll(arrayToSearch));
 //     numbers contained in an input array. If there are no positive numbers
 //     return an empty array. Note: The input array should not change.
 
+function postiveOnly(array){
+  let i = 0
+  
+  while(array.length > i){
+    
+    if(array[i] <= 0){
+    array.splice(i, 1); // is there a better method?
+    }
+    
+    else{
+      i++; // deleting a value changes i value the same^ 
+    }      // only need one or the other in this case
+    
+  }
+  
+  return array
+}
+
+console.log(postiveOnly([8, -5, 10, -4, -7, 0, 2, 9]));
 
 
 // 11. Pick a problem from Edabit(https://edabit.com/) or 
