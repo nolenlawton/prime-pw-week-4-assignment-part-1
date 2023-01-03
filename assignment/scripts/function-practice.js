@@ -117,7 +117,7 @@ function sumAll(arrayForSum) {
   return sum
 }
 
-console.log(sumAll([1,2,3]));
+console.log(sumAll([1, 2, 3]));
 console.log(sumAll(arrayToSearch));
 
 // 10. Function to return a new array of all positive (greater than zero)
@@ -148,3 +148,36 @@ console.log(postiveOnly([8, -5, 10, -4, -7, 0, 2, 9]));
 // 11. Pick a problem from Edabit(https://edabit.com/) or 
 //     CodeWars(https://www.codewars.com/). Then describe it 
 //     here in a comment, write the function, and test it!
+
+// Write a function that takes an integer as input, and returns the number
+// of bits that are equal to one in the binary representation of that number.
+// Example: The binary representation of 1234 is 10011010010, so the function should return 5 in this case.
+
+function integerToBinary(integer){
+  let binary = integer.toString(2); // number to a binary string
+  return binary;
+}
+
+function splitIntoArray(num) {
+  return Array.from(String(num), Number); // clarrified array as numbers
+}
+
+function sumAll(arrayForSum) {
+  let sum = 0
+  let i = 0
+
+  while(arrayForSum.length - 1 >= i){
+    sum = arrayForSum[i] + sum
+    i++;
+  }
+  return sum
+}
+ 
+let binaryNumber = Number(integerToBinary(49)); // binary string to number
+
+let binaryArray = splitIntoArray(binaryNumber); // number to an array
+
+let totalBinary = sumAll(binaryArray);
+
+
+console.log(totalBinary);
