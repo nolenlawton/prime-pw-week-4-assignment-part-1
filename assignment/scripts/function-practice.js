@@ -33,7 +33,7 @@ function multiplyThree(firstNumber , secondNumber , thirdNumber){
   return firstNumber * secondNumber * thirdNumber;
 }
 
-console.log(multiplyThree(2 , 4 , 3));
+console.log(multiplyThree(2 , 3 , 4));
 
 
 // 5. Function that will return true if a number is positive, 
@@ -94,6 +94,7 @@ console.log(find(8));
 // ----------------------
 // 8. Function to check if a letter is the first letter in a 
 //    string. Return true if it is, and false otherwise
+
 function isFirstLetter(letter, string) {
   if(letter === string.charAt(0)){
       return true
@@ -106,6 +107,7 @@ console.log( 'the first letter of apple is a:', isFirstLetter('a', 'apple') );
 console.log( 'the first letter of apple is z:', isFirstLetter('z', 'apple') );
 
 // 9. Function to return the sum of all numbers in an array
+
 function sumAll(arrayForSum) {
   let sum = 0
   let i = 0
@@ -154,30 +156,28 @@ console.log(postiveOnly([8, -5, 10, -4, -7, 0, 2, 9]));
 // Example: The binary representation of 1234 is 10011010010, so the function should return 5 in this case.
 
 function integerToBinary(integer){
-  let binary = integer.toString(2); // number to a binary string
+  let binary = integer.toString(2); // 1. number to a binary string
   return binary;
 }
 
 function splitIntoArray(num) {
-  return Array.from(String(num), Number); // clarrified array as numbers
+  return Array.from(String(num), Number); // 3. clarrified array as numbers
 }
 
-function sumAll(arrayForSum) {
+function sumAllBinary(integer) {
+  
+  let binaryNumber = Number(integerToBinary(integer)); // 1. and 2. binary string to number
+  
+  let binaryArray = splitIntoArray(binaryNumber); // 3. number to an array
+  
   let sum = 0
   let i = 0
 
-  while(arrayForSum.length - 1 >= i){
-    sum = arrayForSum[i] + sum
+  while(binaryArray.length - 1 >= i){
+    sum = binaryArray[i] + sum;
     i++;
   }
-  return sum
+  return sum // 4. sum of array
 }
  
-let binaryNumber = Number(integerToBinary(49)); // binary string to number
-
-let binaryArray = splitIntoArray(binaryNumber); // number to an array
-
-let totalBinary = sumAll(binaryArray);
-
-
-console.log(totalBinary);
+console.log(sumAllBinary(49));
