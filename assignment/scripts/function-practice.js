@@ -97,6 +97,7 @@ console.log(find(8));
 
 function isFirstLetter(letter, string) {
   if(letter === string.charAt(0)){
+      console.log('the first letter of ', string + ' is ', letter);
       return true
   }
   else {
@@ -167,6 +168,8 @@ function splitIntoArray(num){
 
 function sumAllBinary(integer) {
   sumAll(splitIntoArray( Number(integerToBinary(integer)))); //sumAll used from question 9, didnt need to repeat
+  return integer
 }
+
  
 sumAllBinary(49);
