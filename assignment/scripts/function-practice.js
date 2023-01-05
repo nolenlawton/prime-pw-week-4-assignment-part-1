@@ -116,11 +116,12 @@ function sumAll(arrayForSum) {
     sum = arrayForSum[i] + sum
     i++;
   }
+  console.log(sum);
   return sum
 }
 
-console.log(sumAll([1, 2, 3]));
-console.log(sumAll(arrayToSearch));
+sumAll([1, 2, 3]);
+sumAll(arrayToSearch);
 
 // 10. Function to return a new array of all positive (greater than zero)
 //     numbers contained in an input array. If there are no positive numbers
@@ -160,24 +161,12 @@ function integerToBinary(integer){
   return binary;
 }
 
-function splitIntoArray(num) {
+function splitIntoArray(num){
   return Array.from(String(num), Number); // 3. clarrified array as numbers
 }
 
 function sumAllBinary(integer) {
-  
-  let binaryNumber = Number(integerToBinary(integer)); // 1. and 2. binary string to number
-  
-  let binaryArray = splitIntoArray(binaryNumber); // 3. number to an array
-  
-  let sum = 0
-  let i = 0
-
-  while(binaryArray.length - 1 >= i){
-    sum = binaryArray[i] + sum;
-    i++;
-  }
-  return sum // 4. sum of array
+  sumAll(splitIntoArray( Number(integerToBinary(integer)))); //sumAll used from question 9, didnt need to repeat
 }
  
-console.log(sumAllBinary(49));
+sumAllBinary(49);
