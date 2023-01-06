@@ -100,7 +100,6 @@ console.log(find(8));
 
 function isFirstLetter(letter, string) {
   if(letter === string.charAt(0)){
-      console.log('the first letter of ', string + ' is ', letter);
       return true
   }
   else {
