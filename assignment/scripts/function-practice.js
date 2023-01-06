@@ -73,18 +73,21 @@ let arrayToSearch = [1, 2, 3, 4, 5, 6, 7, 8];
 
 
 function find(value){
-  let i = 0;
+ let i = 0;
 
-  while(value != arrayToSearch[i] && arrayToSearch.length - 1 >= i ){
+ while(value != arrayToSearch[i] && arrayToSearch.length > i ){
     i++;
 }
 
 if (value = arrayToSearch[i]){
   return true;
 }
+else {
   return false;
+}
 
 }
+
 
 console.log(find(8));
 
@@ -113,7 +116,7 @@ function sumAll(arrayForSum) {
   let sum = 0
   let i = 0
 
-  while(arrayForSum.length - 1 >= i){
+  while(arrayForSum.length > i){
     sum = arrayForSum[i] + sum
     i++;
   }
@@ -157,7 +160,7 @@ console.log(postiveOnly([8, -5, 10, -4, -7, 0, 2, 9]));
 // of bits that are equal to one in the binary representation of that number.
 // Example: The binary representation of 1234 is 10011010010, so the function should return 5 in this case.
 
-function integerToBinary(integer){
+/* function integerToBinary(integer){
   let binary = integer.toString(2); // 1. number to a binary string
   return binary;
 }
@@ -169,7 +172,13 @@ function splitIntoArray(num){
 function sumAllBinary(integer) {
   sumAll(splitIntoArray( Number(integerToBinary(integer)))); //sumAll used from question 9, didnt need to repeat
   return integer
+} */
+
+// code to logically solve it above, simple below
+
+function sumAllBinary(integer) { //sumAll used from question 9, didnt need to repeat
+  sumAll(Array.from(String(Number(integer.toString(2))), Number)); // summed up into one
+  return integer
 }
 
- 
 sumAllBinary(49);
