@@ -23,7 +23,7 @@ console.log(helloName('Nolen'));
 
 // 3. Function to add two numbers together & return the result
 function addNumbers(firstNumber , secondNumber) {
-  return firstNumber + secondNumber;
+  return firstNumber + secondNumber;    
 }
 
 console.log(addNumbers(5 , 3));
@@ -55,15 +55,11 @@ console.log( '-3 is positive, ' + isPositive(-3) );
 //    array is empty, return `undefined`.
 
 function getLast(array = []) { 
-  last = array[array.length - 1]
-
-  if (array = '') {
-    return undefined
-  }
-    return last
+    return array[array.length - 1]
 }
 
 console.log(getLast(['Bear', 'Maple', 'Milli']));
+console.log(getLast());
 
 // 7. Function to find a value in an array. Return true if the 
 //    value is found and false otherwise. Use a loop;
@@ -72,14 +68,14 @@ console.log(getLast(['Bear', 'Maple', 'Milli']));
 let arrayToSearch = [1, 2, 3, 4, 5, 6, 7, 8];
 
 
-function find(value){
+function find(value, array){
  let i = 0;
 
- while(value != arrayToSearch[i] && arrayToSearch.length > i ){
+ while(value != array[i] && array.length > i ){
     i++;
 }
 
-if (value = arrayToSearch[i]){
+if (value = array[i]){
   return true;
 }
 else {
@@ -88,8 +84,7 @@ else {
 
 }
 
-
-console.log(find(8));
+console.log(find(8, arrayToSearch));
 
 
 // ----------------------
@@ -115,8 +110,8 @@ function sumAll(arrayForSum) {
   let sum = 0
   let i = 0
 
-  while(arrayForSum.length > i){
-    sum = arrayForSum[i] + sum
+  while(arrayForSum.length > i){  // how do I make a for loop of this
+    sum += arrayForSum[i]
     i++;
   }
   console.log(sum);
@@ -176,8 +171,7 @@ function sumAllBinary(integer) {
 // code to logically solve it above, simple below
 
 function sumAllBinary(integer) { //sumAll used from question 9, didnt need to repeat
-  sumAll(Array.from(String(Number(integer.toString(2))), Number)); // summed up into one
-  return integer
+  sumAll(Array.from((integer.toString(2)), Number)); // summed up into one
 }
 
 sumAllBinary(49);
